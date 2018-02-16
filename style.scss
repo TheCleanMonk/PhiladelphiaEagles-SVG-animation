@@ -1,0 +1,49 @@
+$num: 2;
+$idList: "#eagle","#underEye","#onNose","#EAG","#L","#E","#S","#underEye","#onNose","#firstP","#firstH","#firstI","#firstL","#firstA","#lowD","#lowE","#lowL","#lowP","#lowH","#lowI","#lowA";
+
+#eagle,#underEye,#onNose,#EAG,#L,#E,
+#S,#underEye,#onNose,#firstP,#firstH,
+#firstI,#firstL,#firstA,#lowD,#lowE,
+#lowL,#lowP,#lowH,#lowI,#lowA 
+{opacity: 0;}
+
+html,body{
+	height:100%;
+}
+svg{
+  height:auto;
+  width:100%;
+  max-width:700px;
+  display:block;
+  margin:0 auto;
+}
+
+@each $item in $idList {
+	$num: $num + 0.4;
+	#{$item}{
+		animation-name: eagle;
+		animation-duration: 1s;
+		animation-timing-function: ease-in;
+		animation-delay: #{$num}s;
+		animation-fill-mode: forwards;
+	}
+}
+html{
+	animation-name: green;
+	animation-duration: 2s;
+	animation-timing-function: ease-in;
+	animation-delay: #{$num}s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes eagle {
+	0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes green {
+	0% {background-color:white;}
+    100% {background-color:#6db764}
+}
+
+
+
